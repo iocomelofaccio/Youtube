@@ -1,0 +1,77 @@
+on Clock#Time=all,**:** do
+  If %systime%>12:03:00
+    If %systime%<18:00:00
+      PWM,15,1000,20000
+      PWM,13,0,20000
+    Endif
+  Endif
+  If %systime%>18:03:00
+    If %systime%<20:00:00
+      PWM,15,0,20000
+      PWM,13,1000,20000
+    Endif
+  Endif
+  If %systime%>20:03:00
+    PWM,15,0,1000
+    PWM,13,0,1000
+  Endif
+  If %systime%<12:00:00
+    PWM,15,0,1000
+    PWM,13,0,1000
+  Endif
+  If [TemperaturaPaludario#TemperaturaPaludario] > 25
+    sendTo 9,"GPIO,5,0"   
+  else
+    sendTo 9,"GPIO,5,1" 
+  Endif
+  
+  If [UmiditaPaludario#Humidity] < 80
+    sendTo 9,"GPIO,13,0"   
+  else
+    sendTo 9,"GPIO,13,1" 
+  Endif
+
+endon
+
+on Clock#Time=all,12:00 do
+  PWM,15,100,20000
+endon
+on Clock#Time=all,12:01 do
+  PWM,15,400,20000
+endon
+on Clock#Time=all,12:02 do
+  PWM,15,700,20000
+endon
+on Clock#Time=all,12:03 do
+  PWM,15,1000,20000
+endon
+
+on Clock#Time=all,18:00 do
+  PWM,15,700,20000
+  PWM,13,100,20000
+endon
+on Clock#Time=all,18:01 do
+  PWM,15,400,20000
+  PWM,13,400,20000
+endon
+on Clock#Time=all,18:02 do
+  PWM,15,100,20000
+  PWM,13,700,20000
+endon
+on Clock#Time=all,18:03 do
+  PWM,15,0,20000
+  PWM,13,1000,20000
+endon
+
+on Clock#Time=all,20:00 do
+  PWM,13,700,20000
+endon
+on Clock#Time=all,20:01 do
+  PWM,13,400,20000
+endon
+on Clock#Time=all,20:02 do
+  PWM,13,150,20000
+endon
+on Clock#Time=all,20:03 do
+  PWM,13,0,20000
+endon
