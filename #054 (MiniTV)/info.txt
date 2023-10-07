@@ -1,0 +1,8 @@
+Un riproduttore multimediale con ESP32 e scheda Audio
+
+Video Originale: https://www.instructables.com/Play-Video-With-ESP32/
+Sorgenti e STL:
+ESP32: https://amzn.eu/d/8DBLynP
+schermo: https://it.aliexpress.com/item/1005003797803015.html?spm=a2g0o.order_detail.order_detail_item.2.7c38582fewxL9K&gatewayAdapt=glo2ita
+MAX98357: https://amzn.eu/d/2tKEdqF
+pulsanti: https://share.temu.com/B4P5DxoXTtA
