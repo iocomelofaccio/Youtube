@@ -1,0 +1,3 @@
+# Setting these variables will automatically connect board to WiFi on boot
+CIRCUITPY_WIFI_SSID="YOURSSID"
+CIRCUITPY_WIFI_PASSWORD="YOURPSW"
