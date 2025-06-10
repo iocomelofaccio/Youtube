@@ -1,0 +1,8 @@
+Riconoscimento facciale
+python3 -m venv --system-site-packages face_rec
+source face_rec/bin/activate
+sudo apt update
+sudo apt install python3-opencv
+pip install imutils
+sudo apt install cmake
+pip install face-recognition
